@@ -8,11 +8,17 @@ import { onMounted } from "vue";
 export default {
   name: "HomeView",
   setup() {
+    const API_URL = process.env.VUE_APP_API_URL;
+    
     const GetTest = async () => {
-      const response = await fetch("http://localhost:5000/api/test-get");
-      const data = await response.json();
-
-      console.log(data);
+      fetch(`${API_URL}/api/test-get`)
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+        })
+        .catch(error => {
+          console.error(error);
+        });
     };
 
     onMounted(async () => {
