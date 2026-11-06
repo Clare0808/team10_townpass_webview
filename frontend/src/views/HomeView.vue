@@ -9,14 +9,14 @@ export default {
   name: "HomeView",
   setup() {
     const API_URL = process.env.VUE_APP_API_URL;
-    
+
     const GetTest = async () => {
       fetch(`${API_URL}/api/test-get`)
-        .then(response => response.json())
-        .then(data => {
+        .then((response) => response.json())
+        .then((data) => {
           console.log(data);
         })
-        .catch(error => {
+        .catch((error) => {
           console.error(error);
         });
     };
