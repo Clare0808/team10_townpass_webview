@@ -1,7 +1,8 @@
 <template>
-  <nav>
+  <nav v-if="$route.name !== 'station-map'" class="app-nav">
     <router-link to="/">Home</router-link>
     <router-link to="/test">Test</router-link>
+    <router-link to="/station-map">台北車站 B1–B4 地圖</router-link>
   </nav>
   <router-view />
 </template>
@@ -15,8 +16,12 @@
   color: #2c3e50;
 }
 
-nav {
+.app-nav {
   padding: 30px;
+
+  a + a {
+    margin-left: 16px;
+  }
 
   a {
     font-weight: bold;

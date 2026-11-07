@@ -13,6 +13,11 @@ const routes = [
     name: "TestPage",
     component: TestPage,
   },
+  {
+    path: "/station-map",
+    name: "station-map",
+    component: () => import("../views/StationMapView.vue"),
+  },
 ];
 
 const router = createRouter({
